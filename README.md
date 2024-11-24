@@ -34,7 +34,7 @@ Get the JAR file from https://github.com/tdgi/deviceapi/releases/tag/v1.0.0 and 
 
 The application listens for incoming HTTP requests on port 8080. 
 
-API endpoints:
+## API endpoints:
 
 * Retrieve all devices:
 
