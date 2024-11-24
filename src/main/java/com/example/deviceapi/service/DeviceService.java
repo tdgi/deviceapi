@@ -65,7 +65,7 @@ public class DeviceService {
         List<DeviceJson> data = jdbcTemplate.query(recursiveQuery, DeviceService::deviceMapper2);
 
         HashMap<String, DeviceNodeJson> map = new HashMap<>();
-        data.forEach(device -> map.put(device.getMac(), new DeviceNodeJson(device.getMac(), device.getUplinkMac())));
+        data.forEach(device -> map.put(device.getMac(), new DeviceNodeJson(device.getMac(), device.getUplinkMac(), null)));
 
         List<DeviceNodeJson> tree = buildTree(data, map, null);
         return tree;
@@ -90,7 +90,7 @@ public class DeviceService {
         }
 
         HashMap<String, DeviceNodeJson> map = new HashMap<>();
-        data.forEach(device -> map.put(device.getMac(), new DeviceNodeJson(device.getMac(), device.getUplinkMac())));
+        data.forEach(device -> map.put(device.getMac(), new DeviceNodeJson(device.getMac(), device.getUplinkMac(), null)));
 
         List<DeviceNodeJson> tree = buildTree(data, map, map.get(mac).getParent());
         return tree;

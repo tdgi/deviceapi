@@ -10,11 +10,8 @@ public enum DevTypeEnum {
 
     private final int code;
 
-    //private final String encode;
-
     DevTypeEnum(int code) {
         this.code = code;
-        //this.encode = encode;
     }
 
     public int getCode() {
